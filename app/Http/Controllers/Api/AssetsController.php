@@ -540,8 +540,7 @@ class AssetsController extends Controller
         $asset->model()->associate(AssetModel::find((int) $request->get('model_id')));
 
         $asset->fill($request->validated());
-        $asset->user_id    = Auth::id();
-
+        $asset->user_id = Auth::id();
         /**
         * this is here just legacy reasons. Api\AssetController
         * used image_source  once to allow encoded image uploads.

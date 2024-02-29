@@ -109,6 +109,7 @@ class Asset extends Depreciable
         'order_number'     => 'nullable|string|max:191',
         'notes'            => 'nullable|string|max:65535',
         'assigned_to'      => 'nullable|integer',
+        'extra_user'       => 'nullable|integer',
         'requestable'      => 'nullable|boolean',
     ];
 
@@ -121,6 +122,7 @@ class Asset extends Depreciable
     protected $fillable = [
         'asset_tag',
         'assigned_to',
+        'extra_user',
         'assigned_type',
         'company_id',
         'image',
