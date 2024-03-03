@@ -313,7 +313,7 @@ class Asset extends Depreciable
      * @since [v3.0]
      * @return bool
      */
-    public function checkOut($target, $admin = null, $checkout_at = null, $expected_checkin = null, $note = null, $name = null, $location = null)
+    public function checkOut($target,$extra_user, $admin = null, $checkout_at = null, $expected_checkin = null, $note = null, $name = null, $location = null)
     {
         if (! $target) {
             return false;
@@ -328,6 +328,7 @@ class Asset extends Depreciable
 
         $this->last_checkout = $checkout_at;
         $this->name = $name;
+        $this->extra_user = $extra_user;
 
         $this->assignedTo()->associate($target);
 
